@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -24,10 +25,30 @@ module.exports = {
         use: { loader: 'html-loader' },
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(css|scss)$/,
         use: [ 'style-loader', 'css-loader', 'sass-loader' ],
-      }
-    ]
+      },
+      {
+        test: /\.svg/,
+        use: { loader: 'svg-url-loader' },
+      },
+      // {
+      //   test: /\.svg$/,
+      //   use: [
+      //     { loader: 'babel-loader' },
+      //     {
+      //       loader: 'react-svg-loader',
+      //       options: {
+      //         svgo: {
+      //           plugins: [{ removeTitle: false }],
+      //           floatPrecision: 2,
+      //         },
+      //         jsx: true,
+      //       }
+      //     }
+      //   ]
+      // },
+    ],
   },
   plugins: [
     new HtmlWebpackPplugin({
@@ -39,6 +60,7 @@ module.exports = {
     })
   ],
   devServer: {
+    historyApiFallback: true,
     static: { directory: path.join(__dirname, 'dist') },
     port: process.env.PORT || 3000,
     compress: true,
