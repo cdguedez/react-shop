@@ -8,6 +8,7 @@ import Login from '../containers/Login'
 import CreateNewPassword from '../containers/CreateNewPassword'
 import RecoveryPassword from '../containers/RecoveryPassword'
 import NotFound from '../pages/NotFound'
+import Register from '../containers/Register'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
+            <Route path='/register' element={<Register />} />
             <Route exact path="/create-new-password" element={<CreateNewPassword />} />
             <Route exact path="/recovery-password/*" element={<RecoveryPassword />} />
             <Route path="*" element={<NotFound />} />

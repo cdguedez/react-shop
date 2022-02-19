@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import '../assets/styles/recovery-password.scss'
 import Logo from '../assets/logos/logo_yard_sale.svg'
 import EmailIcon from '../assets/icons/email.svg'
@@ -13,10 +14,10 @@ const RecoveryPassword = () => {
     <div className="email-image">
       <img src={EmailIcon} alt="email" />
     </div>
-    <button className="primary-button login-button">Login</button>
+    <button className="primary-button login-button"><Link to={'/login'}>Login</Link></button>
     <p className="resend">
       <span>Didn't receive the email?</span>
-      <a href="/">Resend</a>
+      <a href='#'>Resend</a>
     </p>
   </div>
 </div>
