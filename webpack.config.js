@@ -32,22 +32,6 @@ module.exports = {
         test: /\.svg/,
         use: { loader: 'svg-url-loader' },
       },
-      // {
-      //   test: /\.svg$/,
-      //   use: [
-      //     { loader: 'babel-loader' },
-      //     {
-      //       loader: 'react-svg-loader',
-      //       options: {
-      //         svgo: {
-      //           plugins: [{ removeTitle: false }],
-      //           floatPrecision: 2,
-      //         },
-      //         jsx: true,
-      //       }
-      //     }
-      //   ]
-      // },
     ],
   },
   plugins: [
