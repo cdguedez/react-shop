@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-import LogoYardSale from './../assets/logos/logo_yard_sale.svg'
+import LogoYardSale from '@assets/logos/logo_yard_sale.svg'
 
 const NavbarLeft = () => {
   return (

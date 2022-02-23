@@ -1,5 +1,5 @@
 import React from 'react'
-import './../assets/styles/my-order.scss'
+import '@assets/styles/my-order.scss'
 
 const MyOrders = () => {
   const Img = 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'

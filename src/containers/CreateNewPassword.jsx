@@ -1,6 +1,6 @@
 import React from "react";
-import "../assets/styles/create-new-password.scss";
-import Logo from "./../assets/logos/logo_yard_sale.svg";
+import "@assets/styles/create-new-password.scss";
+import Logo from "@assets/logos/logo_yard_sale.svg";
 
 const CreateNewPassword = () => {
   return (

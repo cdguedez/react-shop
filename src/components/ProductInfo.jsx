@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import BtAddCart from './../assets/icons/bt_add_to_cart.svg'
+import BtAddCart from '@assets/icons/bt_add_to_cart.svg'
 
 const ProductInfo = () => {
   return (

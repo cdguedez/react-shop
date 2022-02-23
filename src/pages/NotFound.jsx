@@ -1,6 +1,6 @@
 import React from "react";
-import Error404 from "./../assets/logos/error-404.svg";
-import "../assets/styles/not-found.scss";
+import Error404 from "@assets/logos/error-404.svg";
+import "@assets/styles/not-found.scss";
 import { Link } from "react-router-dom";
 
 const NotFound = () => {

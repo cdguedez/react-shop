@@ -1,10 +1,6 @@
-/**
- * Class tree
- */
-
 import React from "react";
 import { Link } from "react-router-dom";
-import "../assets/styles/login.scss";
+import "@assets/styles/login.scss";
 
 const Login = () => {
   return (

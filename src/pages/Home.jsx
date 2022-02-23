@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <ProductDetails />
+      { false && <ProductDetails /> }
       <section className='main-container'>
         <div className='cards-container'>
           <div className='product-card'>

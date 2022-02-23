@@ -1,7 +1,3 @@
-/**
- * Class night
- */
-
 import React from 'react'
 
 const MyOrders = () => {

@@ -1,12 +1,8 @@
-/**
- * Class two
- */
-
 import React from "react";
 import { Link } from "react-router-dom";
-import "../assets/styles/recovery-password.scss";
-import Logo from "../assets/logos/logo_yard_sale.svg";
-import EmailIcon from "../assets/icons/email.svg";
+import "@assets/styles/recovery-password.scss";
+import Logo from "@assets/logos/logo_yard_sale.svg";
+import EmailIcon from "@assets/icons/email.svg";
 
 const RecoveryPassword = () => {
   return (

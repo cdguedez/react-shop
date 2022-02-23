@@ -1,23 +1,24 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import IconSHopCart from './../assets/icons/icon_shopping_cart.svg'
-import DesktopMenu from './../components/DesktopMenu'
+import IconSHopCart from '@assets/icons/icon_shopping_cart.svg'
+import DesktopMenu from '@components/DesktopMenu'
 
 const NavbarRight = () => {
   const [isVisible, setIsVisible] = useState(false)
-  console.log('render navbar right')
   return (
     <>
       <Navbar>
         <ul>
-          <NavbarEmail>platzi@example.com</NavbarEmail>
-          <NavbarShoppCart onClick={() => setIsVisible(!isVisible)}>
+          <NavbarEmail onClick={() => setIsVisible(!isVisible)}>
+            platzi@example.com
+          </NavbarEmail>
+          <NavbarShoppCart>
             <img src={IconSHopCart} alt="shopping-cart" />
             <div>2</div>
           </NavbarShoppCart>
         </ul>
       </Navbar>
-      { isVisible ? <DesktopMenu /> : null }
+      { isVisible && <DesktopMenu /> }
     </>
   )
 }

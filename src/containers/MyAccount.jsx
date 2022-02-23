@@ -1,7 +1,3 @@
-/**
- * Class five
- */
-
 import React from 'react'
 
 const MyAccount = () => {

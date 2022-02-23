@@ -1,8 +1,8 @@
 import React from "react";
 import styled from 'styled-components'
-import IconMenu from './../assets/icons/icon_menu.svg'
-import NavbarLeft from './../containers/NavbarLeft'
-import NavbarRight from './../containers/NavbarRight'
+import IconMenu from '@assets/icons/icon_menu.svg'
+import NavbarLeft from '@components/NavbarLeft'
+import NavbarRight from '@components/NavbarRight'
 
 const Header = () => {
   return (

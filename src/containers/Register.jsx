@@ -1,10 +1,6 @@
-/**
- * Class for
- */
-
 import React from "react";
 import { Link } from "react-router-dom";
-import "./../assets/styles/register.scss";
+import "@assets/styles/register.scss";
 
 const Register = () => {
   return (

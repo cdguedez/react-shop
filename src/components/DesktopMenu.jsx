@@ -10,10 +10,10 @@ const DesktopMenu = () => {
           <Link to={'/my-orders'}>My orders</Link>
         </Item>
         <Item>
-          <Link to={'/edit-account'}>My account</Link>
+          <Link to={'/my-account'}>My account</Link>
         </Item>
         <Item>
-          <Link to={'/logout'}>Sign out</Link>
+          <Link to={'/login'}>Sign out</Link>
         </Item>
       </List>
     </DesktopMenuStyled>

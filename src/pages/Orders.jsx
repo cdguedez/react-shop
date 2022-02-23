@@ -1,7 +1,3 @@
-/**
- * Class Seven
-*/
-
 import React from 'react'
 
 const Orders = () => {

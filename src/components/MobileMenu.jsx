@@ -1,10 +1,6 @@
-/**
- * class eight
-*/
-
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './../assets/styles/mobile-menu.scss'
+import '@assets/styles/mobile-menu.scss'
 
 const MobileMenu = () => {
   return (

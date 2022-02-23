@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import CloseImg from './../assets/icons/icon_menu.svg'
+import CloseImg from '@assets/icons/icon_close.png'
 const IconClose = () => {
   return (
     <Icon>
