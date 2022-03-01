@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { memo } from 'react'
 import styled from 'styled-components'
+import ProductItem from '@components/ProductItem'
+import useProducts from '@hooks/useProducts'
 
-const MainContainer = ({ children }) => {
+const API = `https://api.escuelajs.co/api/v1/products?limit=10&offset=0`
+
+const MainContainer = () => {
+  const products = useProducts(API)
+  console.info('render MainContainer')
   return (
     <Container>
       <CardsContainer>
-        { children }
+        {products.map(product => <ProductItem key={product.id} product={product} />)}
       </CardsContainer>
     </Container>
   )
 }
 
-export default MainContainer
+export default memo(MainContainer)
 
 const Container = styled.main`
   margin-top: 12px;

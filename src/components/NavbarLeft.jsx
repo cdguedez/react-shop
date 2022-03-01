@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import LogoYardSale from '@assets/logos/logo_yard_sale.svg'
 
 const NavbarLeft = () => {
+  console.log('render navLeft')
   return (
     <Navbar>
       <Logo src={LogoYardSale} alt="logo" />
@@ -31,7 +32,7 @@ const NavbarLeft = () => {
   )
 }
 
-export default NavbarLeft
+export default memo(NavbarLeft)
 
 const Navbar = styled.div`
   display: flex;

@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 import IconSHopCart from '@assets/icons/icon_shopping_cart.svg'
 import DesktopMenu from '@components/DesktopMenu'
+import AppContext from '@context/AppContext'
 
 const NavbarRight = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const { cart } = useContext(AppContext).state
+  const cardItems = cart.length
+  console.log('render navRight')
   return (
     <>
       <Navbar>
@@ -14,7 +18,7 @@ const NavbarRight = () => {
           </NavbarEmail>
           <NavbarShoppCart>
             <img src={IconSHopCart} alt="shopping-cart" />
-            <div>2</div>
+            { cardItems > 0 && <div>{cardItems}</div> }
           </NavbarShoppCart>
         </ul>
       </Navbar>
