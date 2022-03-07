@@ -1,18 +1,24 @@
-import React, { memo } from 'react'
+import React, { memo, useState } from 'react'
 import styled from 'styled-components'
 import ProductItem from '@components/ProductItem'
 import useProducts from '@hooks/useProducts'
+import ProductDetails from '@components/ProductDetails'
 
-const API = `https://api.escuelajs.co/api/v1/products?limit=10&offset=0`
+const API = `https://api.escuelajs.co/api/v1/products?limit=8&offset=0`
 
 const MainContainer = () => {
+  const [detailVisible, setDetailVisible] = useState(false)
   const products = useProducts(API)
-  console.info('render MainContainer')
+  
+  const showDetail = () => setDetailVisible(true)
+  const hideDetail = () => setDetailVisible(false)
+
   return (
     <Container>
       <CardsContainer>
-        {products.map(product => <ProductItem key={product.id} product={product} />)}
+        {products.map(product => <ProductItem key={product.id} product={product} showDetail={showDetail} />)}
       </CardsContainer>
+      { detailVisible && <ProductDetails hideDetail={hideDetail} /> }
     </Container>
   )
 }

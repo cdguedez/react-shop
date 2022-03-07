@@ -2,16 +2,15 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import addToCartImage from '@assets/icons/bt_add_to_cart.svg'
 import AppContext from '@context/AppContext'
-const ProductItem = ({ product }) => {
+const ProductItem = ({ product, showDetail }) => {
   const { id, images, price, title } = product
   const { addToCart } = useContext(AppContext)
-
   const handleClick = item => {
     addToCart(item)
   }
 
   return (
-    <ProductCard>
+    <ProductCard onClick={showDetail}>
       <img
         src={ images[0] }
         alt={title}
@@ -38,6 +37,7 @@ const ProductCard = styled.article`
     height: 240px;
     border-radius: 20px;
     object-fit: cover;
+    cursor: pointer;
   }
 
   @media (max-width: 640px) {

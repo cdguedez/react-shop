@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import CloseImg from '@assets/icons/icon_close.png'
-const IconClose = () => {
+const IconClose = ({ hideDetail }) => {
   return (
-    <Icon>
+    <Icon onClick={hideDetail}>
       <img src={CloseImg} alt='close' />
     </Icon>
   )
