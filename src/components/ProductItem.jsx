@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import addToCartImage from '@assets/icons/bt_add_to_cart.svg'
 import AppContext from '@context/AppContext'
-const ProductItem = ({ product, showDetail }) => {
+const ProductItem = ({ product }) => {
   const { id, images, price, title } = product
   const { addToCart } = useContext(AppContext)
   const handleClick = item => {
@@ -10,14 +10,14 @@ const ProductItem = ({ product, showDetail }) => {
   }
 
   return (
-    <ProductCard onClick={showDetail}>
+    <ProductCard>
       <img
         src={ images[0] }
         alt={title}
       />
       <Info>
         <div>
-          <p>{price}</p>
+          <p>$ {price}</p>
           <p>{title}</p>
         </div>
         <figure onClick={() => handleClick(product)}>

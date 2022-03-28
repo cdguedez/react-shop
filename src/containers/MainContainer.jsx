@@ -4,21 +4,18 @@ import ProductItem from '@components/ProductItem'
 import useProducts from '@hooks/useProducts'
 import ProductDetails from '@components/ProductDetails'
 
-const API = `https://api.escuelajs.co/api/v1/products?limit=8&offset=0`
+const API = `https://api.escuelajs.co/api/v1/products?limit=10&offset=1`
 
 const MainContainer = () => {
-  const [detailVisible, setDetailVisible] = useState(false)
+  const [data, setData] = useState({ product: {}, isOpen: false })
   const products = useProducts(API)
   
-  const showDetail = () => setDetailVisible(true)
-  const hideDetail = () => setDetailVisible(false)
-
   return (
     <Container>
       <CardsContainer>
-        {products.map(product => <ProductItem key={product.id} product={product} showDetail={showDetail} />)}
+        {products.map(product => <ProductItem key={product.id} product={product} />)}
       </CardsContainer>
-      { detailVisible && <ProductDetails hideDetail={hideDetail} /> }
+      { data.isOpen && <ProductDetails /> }
     </Container>
   )
 }
