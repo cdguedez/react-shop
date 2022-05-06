@@ -1,45 +1,42 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '@assets/styles/my-order.scss'
+import AppContext from '@context/AppContext'
+import close from '@assets/icons/icon_close.png'
 
 const MyOrders = () => {
-  const Img = 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+  const { state, removeFromCart } = useContext(AppContext)
+
+  const handleRemoveCart = product => {
+    removeFromCart(product)
+  }
+
   return (
-<div className="my-order">
-  <div className="my-order-container">
-    <h1 className="title">My order</h1>
-    <div className="my-order-content">
-      <div className="order">
-        <p>
-          <span>03.25.21</span>
-          <span>3 articles</span>
-        </p>
-        <p>$90.00</p>
-      </div>
-      <div className="shopping-cart">
-        <figure>
-          <img src={Img} alt="bike" />
-        </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
-      </div>
-      <div className="shopping-cart">
-        <figure>
-          <img src={Img} alt="bike" />
-        </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
-      </div>
-      <div className="shopping-cart">
-        <figure>
-          <img src={Img} alt="bike" />
-        </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
+    <div className="my-order">
+      <div className="my-order-container">
+        <h1 className="title">My order</h1>
+        <div className="my-order-content">
+          {state.cart.map(product => (
+            <div
+              className="shopping-cart"
+              key={`orderItem-${product.id}`}
+            >
+              <figure>
+                <img src={product.images[0]} alt={product.title} />
+              </figure>
+              <p>{product.title}</p>
+              <p>$ {product.price}</p>
+              <img src={close} alt="Close" onClick={() => handleRemoveCart(product)} />
+            </div>
+          ))}
+          <div className="order">
+            <p>
+              <span>{state.cart.length} articles</span>
+            </p>
+            <p>Total $ {state.cart.reduce((acc, curr) => acc + curr.price, 0)}</p>
+          </div>          
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
   )
 }
 

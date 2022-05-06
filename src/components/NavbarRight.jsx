@@ -3,9 +3,11 @@ import styled from 'styled-components'
 import IconSHopCart from '@assets/icons/icon_shopping_cart.svg'
 import DesktopMenu from '@components/DesktopMenu'
 import AppContext from '@context/AppContext'
+import MyOrders from '@components/MyOrders'
 
 const NavbarRight = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const [toggleOrders, setToggleOrders] = useState(false)
   const { cart } = useContext(AppContext).state
   const cardItems = cart.length
   console.log('render navRight')
@@ -16,13 +18,14 @@ const NavbarRight = () => {
           <NavbarEmail onClick={() => setIsVisible(!isVisible)}>
             platzi@example.com
           </NavbarEmail>
-          <NavbarShoppCart>
+          <NavbarShoppCart onClick={() => setToggleOrders(!toggleOrders)}>
             <img src={IconSHopCart} alt="shopping-cart" />
             { cardItems > 0 && <div>{cardItems}</div> }
           </NavbarShoppCart>
         </ul>
       </Navbar>
       { isVisible && <DesktopMenu /> }
+      { toggleOrders && <MyOrders /> }
     </>
   )
 }
